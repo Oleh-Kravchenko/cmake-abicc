@@ -1,0 +1,9 @@
+<version>@VERSION@</version>
+<headers>@HEADERS@</headers>
+<libs>@LIBS@</libs>
+<include_paths>@INCLUDE_PATHS@</include_paths>
+<gcc_options>@GCC_OPTIONS@</gcc_options>
+<defines>@DEFINES@</defines>
+<search_libs>@SEARCH_LIBS@</search_libs>
+<tools>@TOOLS@</tools>
+<cross_prefix>@CROSS_PREFIX@</cross_prefix>
