@@ -8,12 +8,27 @@ CMake module for checking backward compatibility of a C/C++ library.
 - [Git](https://www.git-scm.com/)
 - [abi-compliance-checker](http://ispras.linuxbase.org/index.php/ABI_compliance_checker)
 
-# Example
+# Usage
 
 	ABICC_LIBRARIES(target1 [target2 ...])
 	ABICC_HEADERS(dir1 [dir2 ...] file1 [file2 ...])
 	ABICC_DUMP_FILE(DUMP file)
 	ABICC_COMPARE(OLD file1 NEW file2)
+
+# Example
+
+	IF(CMAKE_BUILD_TYPE STREQUAL "Debug")
+		SET(ABICC_CURRENT_DUMP
+		    "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}_${PROJECT_VERSION}.dump")
+		ABICC_LIBRARIES(libtools)
+		ABICC_HEADERS(include)
+		ABICC_DUMP_FILE(DUMP "${ABICC_CURRENT_DUMP}")
+		ABICC_COMPARE(
+		OLD
+			"/home/projects/libtools/libtools_0.0.4.dump"
+		NEW
+			"${ABICC_CURRENT_DUMP}")
+	ENDIF()
 
 # Installation
 
