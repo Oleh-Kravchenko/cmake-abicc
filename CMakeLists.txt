@@ -1,0 +1,38 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
+
+PROJECT(cmake-abicc NONE)
+
+INCLUDE(CMakePackageConfigHelpers)
+INCLUDE(GNUInstallDirs)
+
+FIND_PACKAGE(cmake-version4git 0.0 QUIET)
+IF(NOT cmake-version4git_FOUND)
+	INCLUDE(3rdparty/cmake-version4git/cmake/cmake-version4git.cmake)
+ENDIF()
+PROJECT_VERSION_FROM_GIT()
+
+SET(PROJECT_CONFIG_PREFIX
+	"${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config")
+SET(PROJECT_CMAKE_INSTALL_LIBDIR
+	"${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}-${PROJECT_VERSION}")
+
+WRITE_BASIC_PACKAGE_VERSION_FILE("${PROJECT_CONFIG_PREFIX}-version.cmake"
+VERSION
+	${PROJECT_VERSION}
+COMPATIBILITY
+	SameMajorVersion)
+
+CONFIGURE_PACKAGE_CONFIG_FILE("cmake/${PROJECT_NAME}-config.cmake.in"
+	"${PROJECT_CONFIG_PREFIX}.cmake"
+INSTALL_DESTINATION
+	"${PROJECT_CMAKE_INSTALL_LIBDIR}")
+
+INSTALL(FILES
+	"${PROJECT_CONFIG_PREFIX}.cmake"
+	"${PROJECT_CONFIG_PREFIX}-version.cmake"
+	"cmake/cmake-abicc.cmake"
+	"cmake/descriptor.cmake"
+	"cmake/descriptor.xml.in"
+	"cmake/FindABIComplianceChecker.cmake"
+DESTINATION
+	"${PROJECT_CMAKE_INSTALL_LIBDIR}")

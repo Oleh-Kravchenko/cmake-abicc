@@ -1,0 +1,6 @@
+*~
+*.bak
+build
+*.kdev4
+*.orig
+*.patch

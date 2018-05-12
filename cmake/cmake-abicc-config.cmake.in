@@ -1,0 +1,6 @@
+@PACKAGE_INIT@
+
+MESSAGE(STATUS "Found @PROJECT_NAME@: ${CMAKE_CURRENT_LIST_DIR}"
+	" (found version \"${@PROJECT_NAME@_VERSION}\")")
+
+INCLUDE("${CMAKE_CURRENT_LIST_DIR}/cmake-abicc.cmake")
