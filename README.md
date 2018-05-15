@@ -12,8 +12,8 @@ CMake module for checking backward compatibility of a C/C++ library.
 
 	ABICC_LIBRARIES(target1 [target2 ...])
 	ABICC_HEADERS(dir1 [dir2 ...] file1 [file2 ...])
-	ABICC_DUMP_FILE(DUMP file)
-	ABICC_COMPARE(OLD file1 NEW file2)
+	ABICC_DUMP_FILE(DUMP file.dump)
+	ABICC_COMPARE(OLD file1.dump NEW file2.dump)
 
 # Example
 
