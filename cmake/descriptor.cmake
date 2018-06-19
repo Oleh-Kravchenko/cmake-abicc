@@ -21,6 +21,7 @@ FUNCTION(UNESCAPE_ARGS)
 		ENDIF()
 
 		LIST(REMOVE_DUPLICATES ${arg})
+		LIST(REMOVE_ITEM ${arg} "")
 		# serialize list to string
 		STRING(REPLACE ";" "\n" ${arg} "${${arg}}")
 		SET(${arg} "${${arg}}" PARENT_SCOPE)
