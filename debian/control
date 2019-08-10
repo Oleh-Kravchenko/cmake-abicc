@@ -1,0 +1,11 @@
+Source: cmake-abicc
+Section: devel
+Priority: optional
+Maintainer: Oleh Kravchenko <oleg@kaa.org.ua>
+Build-Depends: cmake, git
+Homepage: https://gitlab.com/Oleh-Kravchenko/cmake-abicc
+
+Package: cmake-abicc
+Architecture: all
+Depends: cmake, abi-compliance-checker
+Description: CMake module for checking backward compatibility of a C/C++ library

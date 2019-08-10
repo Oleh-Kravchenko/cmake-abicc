@@ -1,0 +1,5 @@
+cmake-abicc (0.0.11) experimental; urgency=low
+
+  * Initial release
+
+ -- Oleh Kravchenko <oleg@kaa.org.ua>  Sun, 1 Jul 2019 12:40:08 +0300
